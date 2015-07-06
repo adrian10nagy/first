@@ -1,5 +1,6 @@
 	<?php
 	  	require '../config.php';
+	  	echo "<div class='col-sm-6 col-xs-12'>";
 	  	if($_GET['id'] != 0){
 	  		$sqlTask = "select distinct id_task, id_proiect, denumire_task, id_utr_creator_task, descriere_task, id_utr_atribuire_task, 
 	  		data_creare_task, data_final_task, prioritate_task, tip_task, estimare_originala_task, 
@@ -9,10 +10,10 @@
 	  			(utilizator.id_utilizator = task.id_utr_creator_task or utilizator.id_utilizator = task.id_utr_atribuire_task)  
 	  			and stare_task = 1 and proiect.id_proiect =".$_GET['id'];		
 		  	$resursaTask = $mysqli->query($sqlTask);
-		  	echo "<h3>Active tasks: ".$resursaTask->num_rows."</h3>";
+		  	echo "<hp>Active tasks: ".$resursaTask->num_rows."</p>";
 			echo "<div id='accordion'>";
 			  	while ($rowTask = $resursaTask->fetch_object()) {
-					  echo "<h3>".$rowTask->denumire_task." Status: ".$rowTask->stare_task."</h3>";
+					  echo "<p>".$rowTask->denumire_task." Status: ".$rowTask->stare_task."</p>";
 					  echo "
 					<div><p>".$rowTask->descriere_task."</p>
 						<p style='background-color:red'>".$rowTask->stare_task."</p>
@@ -20,16 +21,10 @@
 					</div>
 			  	";
 			echo "</div>";
+			echo "</div>";//col-sm-6
 			  	}
 	  	}else{
 		  	header("Location: chooseProject.php");
 	  	}
 
 	?>
-	 
-	<script>
-		$( "#accordion" ).accordion();
-		function redirect () {
-			alert("da");
-		}
-	</script>

@@ -1,39 +1,19 @@
 body {
-  min-height: 2000px;
+ /* min-height: 1000px;*/
   padding-top: 70px;
 }
 /* Pagina de proiect */
-.divProjectBox{
-	height: 60px;
-	width: 100px;
-	position: relative;
-	margin: 20px;
-	font-size: 16px;
-	padding: 10px;
-  border-radius: 10px;
-  background-color: #F9C732;
-  text-align: center;
-  text-decoration: none;
+
+.divBoxNewColor{
+  background-color: #3498DB;
+ color: white!important;
 }
-.divProjectBox:hover{
-  font-size: 1.2em;
+.divBoxNewColor:hover{
+  background-color: #3498DB!important;
   opacity: 0.8;
 }
-a+.divProjectBox {
-  color:inherit;
-  text-decoration: none;
- }
-.divBoxNew{
-  background-image: url("../images/AddNew.png") ;
-  background-color: #07B196;
-  background-size: 30px 30px; 
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
 .aNoDecoration:link{
-   text-align: left;;
  text-decoration: none;
-  background-color: white;
 }
 
 /* div de afisare membrii pe un proiect */
@@ -54,6 +34,9 @@ a+.divProjectBox {
 .divTeamMemberBox:hover{
   opacity: 0.8;
 }
+#divLoadExternalPage{
+  display: inline-block;
+}
 .divIssuesBox{
   background-image: url("../images/defaultuser.png") ;
   background-size: 150px 150px; 
@@ -71,4 +54,24 @@ a+.divProjectBox {
 .redOne{
   background-color: red;
   outline-color: blue;
+}
+
+/* Right panel css */
+.rightPanel{
+  background-color: #E7E7E7;
+  float: right;
+  display: inline-block;
+  position: relative;
+  padding: 2px;
+  margin-right: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.rightPanel .rightPanelField{
+  background-color: white;
+  margin: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 3px;
+  border-radius: 5px;
 }

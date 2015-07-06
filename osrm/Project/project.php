@@ -2,7 +2,6 @@
 <?php
   require '../config.php';
   require '../autorizare.php';
-  require 'modal.php';
   if(!isset($_GET['projectView'])){
     $projectView = 0;
   }else{
@@ -48,36 +47,23 @@
     <style type="text/css"></style>
   </head>
 
-  <body <?php if($projectView==0){ ?> onload="loadExternalPage('team',0,'#divLoadPage')" <?php  } ?> >
+  <body <?php if($projectView==0){ ?> onload="loadExternalPage('team',0)" <?php  } ?> >
     <!-- Fixed navbar -->
     <?php
-      include '../navbar.php';
+      include '../Extern/navbar.php';
+      /*
+
+            <a href="#" class="list-group-item" onclick="loadExternalPage('overall',  <?php echo $projectView; ?>);return false;">Overall State</a>
+            <a href="#" class="list-group-item" onclick="loadExternalPage('team',  <?php echo $projectView; ?>);return false;">The Team</a>
+            <a href="#" class="list-group-item" onclick="loadExternalPage('issues',<?php echo $projectView; ?>);return false;">Active Tasks</a>
+            <a href="#" class="list-group-item" onclick="loadExternalPage('test', <?php echo $projectView; ?>);return false;">Closed Tasks</a>
+      */
     ?>
 
     <!-- Div to choose a project if is bnot set -->
-    <div id="divLoadPage" class="container">
-    </div>
 
-    <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <!-- Div col-xs-3 -->
-      <div class="col-xs-3">
-         <a  href="#" class="aNoDecoration" data-toggle="modal" data-target="#myModal"><div class="divProjectBox divBoxNew" >Add New</div></a>
-        <a href="#" class="aNoDecoration" onclick="loadExternalPage('overall',  <?php echo $projectView; ?>);return false;"><div class="divProjectBox">Overall State</div></a>
-        <a href="#" class="aNoDecoration" onclick="loadExternalPage('team', <?php echo $projectView; ?>);return false;"><div class="divProjectBox">The Team</div></a>
-        <a href="#" class="aNoDecoration" onclick="loadExternalPage('issues',<?php echo $projectView; ?>);return false;"><div class="divProjectBox">Active Tasks</div></a>
-        <a href="#" class="aNoDecoration" onclick="loadExternalPage('test', <?php echo $projectView; ?>);return false;"><div class="divProjectBox">Closed Tasks</div></a>
-      </div>
-      <!-- Div-xs-9 
-        Div to fill -->
-      <div id="divLoadExternalPage" class="col-xs-9">
-
-      </div>
-
-    </div> <!-- /container -->
-
- 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -85,13 +71,7 @@
     <script src="../bootstrap/js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
      <script src="../js/jqueryui/jquery-ui.js"></script>
+    <script src="../js/index.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-  <script>
-    function loadExternalPage(link, paramProj,divId){
-         if (typeof(divId)==='undefined') divId = '#divLoadExternalPage';
-       $(divId).load(link+'.php?id='+paramProj);
-    }
-    </script>
-
 </body></html>

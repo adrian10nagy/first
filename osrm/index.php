@@ -21,6 +21,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/smoothness/jquery-ui.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -38,21 +39,44 @@
 
     <!-- Fixed navbar -->
     <?php
-      include 'navbar.php';
+      include 'Extern/navbar.php';
     ?>
 
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="http://getbootstrap.com/components/#navbar" role="button">View navbar docs »</a>
-        </p>
+      <div class="row">
+        <div class="col-xs-4 col-md-3">
+          <div class="thumbnail">
+            <img src="images/task.png" alt="...">
+            <div class="caption">
+              <h3>Tasks</h3>
+              <p>See, manage, add Tasks</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 col-md-3">
+          <div class="thumbnail">
+            <img src="images/project.png" alt="...">
+            <div class="caption">
+              <h3>Projects</h3>
+              <p>See, manage, add projects</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 col-md-3">
+          <div class="thumbnail">
+            <img src="images/user.png" alt="...">
+            <div class="caption">
+              <h3>Memebers</h3>
+              <p>See, manage, add Members</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div> <!-- /container -->
 
 
@@ -61,8 +85,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="bootstrap/js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+     <script src="js/jqueryui/jquery-ui.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-  
+    <script src="js/index.js"></script>
+    <script>
+    $( "#accordion" ).accordion({ heightStyle: "content"});
+  </script>
 
 </body></html>
